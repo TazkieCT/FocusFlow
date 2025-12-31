@@ -110,7 +110,6 @@ struct SettingsView: View {
     }
 }
 
-
 #Preview {
     NavigationStack {
         SettingsView()
