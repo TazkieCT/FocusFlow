@@ -10,86 +10,67 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("soundEnabled") private var soundEnabled = true
     @State private var showResetAlert = false
-    
+
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
-            
-            VStack(spacing: 40) {
+            Image("background_plain")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+
+            HStack {
                 Spacer()
-                Spacer()
-                Spacer()
 
-                VStack(spacing: 25) {
-                    SettingRow(
-                        icon: "speaker.wave.2.fill",
-                        title: "Sound Effects",
-                        isOn: $soundEnabled
-                    )
+                VStack(spacing: 24) {
 
-                    Divider()
-                        .padding(.horizontal, 60)
+                    VStack(spacing: 18) {
+                        SettingRow(
+                            icon: "speaker.wave.2.fill",
+                            title: "Sound Effects",
+                            tint: .green,
+                            isOn: $soundEnabled
+                        )
 
-                    NavigationLink(destination: PINInputView()) {
-                        HStack {
-                            Image(systemName: "lock.shield.fill")
-                                .font(.system(size: 24))
-                                .foregroundColor(.blue)
-                                .frame(width: 40)
+                        Divider()
 
-                            Text("Parental Mode")
-                                .font(.system(size: 20, weight: .semibold))
-                                .foregroundColor(.black)
-
-                            Spacer()
-
-                            Image(systemName: "chevron.right")
-                                .foregroundColor(.gray)
+                        NavigationLink(destination: PINInputView()) {
+                            SettingNavigationRow(
+                                icon: "lock.shield.fill",
+                                title: "Parental Mode",
+                                tint: .blue
+                            )
                         }
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 15)
-                        .background(Color(white: 0.95))
-                        .cornerRadius(12)
+
+                        Divider()
+
+                        Button {
+                            showResetAlert = true
+                        } label: {
+                            SettingNavigationRow(
+                                icon: "arrow.counterclockwise",
+                                title: "Reset Progress",
+                                tint: .red
+                            )
+                        }
                     }
+                    .padding(30)
+                    .background(Color.white.opacity(0.96))
+                    .cornerRadius(20)
+                    .frame(maxWidth: 520)
 
-                    Divider()
-                        .padding(.horizontal, 60)
+                    VStack(spacing: 6) {
+                        Text("FocusFlow v1.0")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.gray)
 
-                    Button(action: {
-                        showResetAlert = true
-                    }) {
-                        HStack {
-                            Image(systemName: "arrow.counterclockwise")
-                                .font(.system(size: 24))
-                                .foregroundColor(.red)
-                                .frame(width: 40)
-
-                            Text("Reset Progress")
-                                .font(.system(size: 20, weight: .semibold))
-                                .foregroundColor(.red)
-
-                            Spacer()
-                        }
-                        .padding(.horizontal, 30)
-                        .padding(.vertical, 15)
-                        .background(Color(white: 0.95))
-                        .cornerRadius(12)
+                        Text("Helping kids focus in a fun way")
+                            .font(.system(size: 13))
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
                     }
                 }
-                .padding(.horizontal, 40)
 
                 Spacer()
-
-                VStack(spacing: 8) {
-                    Text("FocusFlow v1.0")
-                        .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.gray)
-                    Text("Helping kids focus in a fun way")
-                        .font(.system(size: 14))
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.center)
-                }
-                .padding(.bottom, 30)
             }
         }
         .navigationTitle("Settings")
@@ -103,39 +84,11 @@ struct SettingsView: View {
             Text("All progress and tasks will be reset. Are you sure?")
         }
     }
-    
-    func resetProgress() {
+
+    private func resetProgress() {
         UserDefaults.standard.removeObject(forKey: "tasksCompleted")
         UserDefaults.standard.removeObject(forKey: "currentStreak")
         UserDefaults.standard.removeObject(forKey: "lastPlayedDate")
-    }
-}
-
-struct SettingRow: View {
-    let icon: String
-    let title: String
-    @Binding var isOn: Bool
-
-    var body: some View {
-        HStack {
-            Image(systemName: icon)
-                .font(.system(size: 24))
-                .foregroundColor(.green)
-                .frame(width: 40)
-
-            Text(title)
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundColor(.black)
-
-            Spacer()
-
-            Toggle("", isOn: $isOn)
-                .labelsHidden()
-        }
-        .padding(.horizontal, 30)
-        .padding(.vertical, 15)
-        .background(Color(white: 0.95))
-        .cornerRadius(12)
     }
 }
 
