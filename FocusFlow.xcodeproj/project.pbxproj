@@ -40,6 +40,11 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		05EB74452F050F90004EFFE0 /* Extensions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 		05EB740D2F050108004EFFE0 = {
 			isa = PBXGroup;
 			children = (
+				05EB74452F050F90004EFFE0 /* Extensions */,
 				05EB743E2F050457004EFFE0 /* Components */,
 				05EB74312F050323004EFFE0 /* Views */,
 				05EB74182F050109004EFFE0 /* FocusFlow */,
@@ -104,6 +110,7 @@
 			fileSystemSynchronizedGroups = (
 				05EB74182F050109004EFFE0 /* FocusFlow */,
 				05EB743E2F050457004EFFE0 /* Components */,
+				05EB74452F050F90004EFFE0 /* Extensions */,
 			);
 			name = FocusFlow;
 			packageProductDependencies = (

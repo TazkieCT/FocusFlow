@@ -11,7 +11,9 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.white
+                Image("background")
+                    .resizable()
+                    .scaledToFill()
                     .ignoresSafeArea()
 
                 VStack {
@@ -37,28 +39,11 @@ struct HomeView: View {
 
                     Spacer()
                 }
-
-                Image("HomeKiri")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 220)
-                    .ignoresSafeArea(edges: .bottom)
-                    .ignoresSafeArea(edges: .leading)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-
-                Image("HomeKanan")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 220)
-                    .ignoresSafeArea(edges: .bottom)
-                    .ignoresSafeArea(edges: .trailing)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             }
             .navigationBarBackButtonHidden(true)
         }
     }
 }
-
 
 #Preview {
     HomeView()
