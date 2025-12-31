@@ -15,42 +15,54 @@ struct StoryIntroView: View {
 
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            Image("background_plain")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
 
-            VStack(spacing: 30) {
+            LinearGradient(
+                colors: [
+                    Color.white.opacity(0.4),
+                    Color.white.opacity(0.2)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 28) {
                 Image(characterImage)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-                    .shadow(color: .black.opacity(0.2), radius: 10)
+                    .scaledToFit()
+                    .frame(width: 240)
+                    .overlay(
+                        Rectangle()
+                            .stroke(Color.white, lineWidth: 4)
+                    )
 
-                Text(storyPreview)
-                    .font(.system(size: 18))
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 80)
+                VStack(spacing: 12) {
+                    Text(taskTitle)
+                        .font(.system(size: 26, weight: .bold))
+                        .foregroundColor(.black)
 
-                NavigationLink(destination: VideoGameplayView(
-                    taskTitle: taskTitle,
-                    videoFileName: videoFileName
-                )) {
-                    HStack(spacing: 12) {
-                        Image(systemName: "play.fill")
-                            .font(.title3)
-                        Text("Start the Story")
-                            .font(.system(size: 20, weight: .semibold))
-                    }
-                    .foregroundColor(.white)
-                    .frame(width: 280, height: 60)
-                    .background(Color.black)
-                    .cornerRadius(12)
+                    Text(storyPreview)
+                        .font(.system(size: 18))
+                        .foregroundColor(.black.opacity(0.8))
+                        .multilineTextAlignment(.center)
                 }
-                .padding(.bottom, 30)
+                .padding(.horizontal, 48)
+
+                NavigationLink {
+                    VideoGameplayView(
+                        taskTitle: taskTitle,
+                        videoFileName: videoFileName
+                    )
+                } label: {
+                    PrimaryButton(title: "Start the Story")
+                }
+                .padding(.bottom, 40)
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(taskTitle)
     }
 }
 

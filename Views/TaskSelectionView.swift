@@ -10,33 +10,29 @@ import SwiftUI
 struct TaskSelectionView: View {
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            Image("background_task")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
 
-            VStack(spacing: 40) {
-                HStack(spacing: 60) {
+            VStack(spacing: 32) {
+                Text("Choose Today’s Mission")
+                    .font(.system(size: 28, weight: .bold, design: .rounded))
+                    .foregroundColor(.black)
+                    .padding(.top, 20)
+
+                HStack(spacing: 48) {
                     NavigationLink(destination: StoryIntroView(
                         taskTitle: "Tooth Brushing",
                         storyPreview: "Serunya Pangeran Leo melawan monster gigi sambil main bubble!",
                         characterImage: "IntroStory",
                         videoFileName: "ToothBrush"
                     )) {
-                        VStack(spacing: 16) {
-                            Image("CardBrushTeeth")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 150, height: 150)
-
-                            Text("Tooth Brushing")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.black)
-
-                            Text("Lawan monster gigi!")
-                                .font(.system(size: 14))
-                                .foregroundColor(.gray)
-                        }
-                        .frame(width: 240, height: 260)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(16)
+                        TaskCard(
+                            image: "CardBrushTeeth",
+                            title: "Tooth Brushing",
+                            subtitle: "Lawan monster gigi!"
+                        )
                     }
 
                     NavigationLink(destination: StoryIntroView(
@@ -45,31 +41,18 @@ struct TaskSelectionView: View {
                         characterImage: "IntroStory",
                         videoFileName: "MakeBed"
                     )) {
-                        VStack(spacing: 16) {
-                            Image("CardMakeBed")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 150, height: 150)
-
-                            Text("Making the Bed")
-                                .font(.system(size: 20, weight: .bold))
-                                .foregroundColor(.black)
-
-                            Text("Jadi pahlawan kamar!")
-                                .font(.system(size: 14))
-                                .foregroundColor(.gray)
-                        }
-                        .frame(width: 240, height: 260)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(16)
+                        TaskCard(
+                            image: "CardMakeBed",
+                            title: "Making the Bed",
+                            subtitle: "Jadi pahlawan kamar!"
+                        )
                     }
                 }
 
-                Spacer()
+                Spacer(minLength: 0)
             }
+            .padding(.horizontal, 40)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Select Daily Task")
     }
 }
 
