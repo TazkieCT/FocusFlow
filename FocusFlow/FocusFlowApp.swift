@@ -1,20 +1,34 @@
 //
-//  FocusFlowApp.swift
-//  FocusFlow
+//  Focus_FlowApp.swift
+//  Focus Flow
 //
-//  Created by SLC Anggrek - Kemanggisan on 31/12/25.
+//  Created by Hush on 24/10/25.
 //
 
 import SwiftUI
 
 @main
-struct FocusFlowApp: App {
-    let persistenceController = PersistenceController.shared
+struct Focus_FlowApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            HomeView()
+                .onAppear {
+                    AppDelegate.orientationLock = .landscape
+
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                        windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape))
+                    }
+                }
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    static var orientationLock = UIInterfaceOrientationMask.all
+
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return AppDelegate.orientationLock
     }
 }
