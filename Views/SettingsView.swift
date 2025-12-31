@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(\.dismiss) var dismiss
+
     @AppStorage("soundEnabled") private var soundEnabled = true
     @State private var showResetAlert = false
 
@@ -21,9 +23,14 @@ struct SettingsView: View {
             HStack {
                 Spacer()
 
-                VStack(spacing: 24) {
-
-                    VStack(spacing: 18) {
+                VStack(spacing: 16) {
+                    
+                    Text("Choose Today’s Mission")
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .foregroundColor(.orange)
+                        .padding(.top, 40)
+                    
+                    VStack(spacing: 12) {
                         SettingRow(
                             icon: "speaker.wave.2.fill",
                             title: "Sound Effects",
@@ -72,9 +79,20 @@ struct SettingsView: View {
 
                 Spacer()
             }
+
+            VStack {
+                HStack {
+                    BackButton(title: "Back") {
+                        dismiss()
+                    }
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding(.leading, 24)
+            .padding(.top, 34)
         }
-        .navigationTitle("Settings")
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .alert("Reset Progress?", isPresented: $showResetAlert) {
             Button("Cancel", role: .cancel) {}
             Button("Reset", role: .destructive) {
@@ -91,6 +109,7 @@ struct SettingsView: View {
         UserDefaults.standard.removeObject(forKey: "lastPlayedDate")
     }
 }
+
 
 #Preview {
     NavigationStack {

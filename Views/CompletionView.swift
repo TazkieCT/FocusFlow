@@ -91,11 +91,8 @@ struct CompletionView: View {
             .padding(.horizontal, 60)
         }
         .navigationBarBackButtonHidden(true)
-        .sheet(isPresented: $navigateToTaskSelection) {
-            NavigationStack {
-                TaskSelectionView()
-            }
-            .presentationDetents([.large])
+        .navigationDestination(isPresented: $navigateToTaskSelection) {
+            TaskSelectionView()
         }
     }
 }

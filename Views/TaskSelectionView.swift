@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskSelectionView: View {
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
         ZStack {
             Image("background_task")
@@ -18,8 +20,8 @@ struct TaskSelectionView: View {
             VStack(spacing: 32) {
                 Text("Choose Today’s Mission")
                     .font(.system(size: 28, weight: .bold, design: .rounded))
-                    .foregroundColor(.black)
-                    .padding(.top, 20)
+                    .foregroundColor(.orange)
+                    .padding(.top, 40)
 
                 HStack(spacing: 48) {
                     NavigationLink(destination: StoryIntroView(
@@ -51,8 +53,32 @@ struct TaskSelectionView: View {
 
                 Spacer(minLength: 0)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .padding(.horizontal, 40)
+
+            VStack {
+                HStack {
+                    Button {
+                        dismiss()
+                    } label: {
+                        HStack {
+                            BackButton(title: "Back") {
+                                dismiss()
+                            }
+
+                            Spacer()
+                        }
+                    }
+
+                    Spacer()
+                }
+
+                Spacer()
+            }
+            .padding(.leading, 24)
+            .padding(.top, 34)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

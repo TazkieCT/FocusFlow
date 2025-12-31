@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StoryIntroView: View {
+    @Environment(\.dismiss) var dismiss
+
     let taskTitle: String
     let storyPreview: String
     let characterImage: String
@@ -39,6 +41,7 @@ struct StoryIntroView: View {
                         Rectangle()
                             .stroke(Color.white, lineWidth: 4)
                     )
+                    .padding(.top, 40)
 
                 VStack(spacing: 12) {
                     Text(taskTitle)
@@ -62,9 +65,24 @@ struct StoryIntroView: View {
                 }
                 .padding(.bottom, 40)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            VStack {
+                HStack {
+                    BackButton(title: "Back") {
+                        dismiss()
+                    }
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding(.leading, 24)
+            .padding(.top, 34)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
+
 
 #Preview {
     NavigationStack {

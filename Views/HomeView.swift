@@ -21,7 +21,7 @@ struct HomeView: View {
 
                     Text("FocusFlow")
                         .font(.system(size: 52, weight: .bold, design: .rounded))
-                        .foregroundColor(.black)
+                        .foregroundColor(.orange)
                         .lineLimit(1)
                         .minimumScaleFactor(0.7)
 

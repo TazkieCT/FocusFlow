@@ -28,6 +28,6 @@ struct SettingRow: View {
             Toggle("", isOn: $isOn)
                 .labelsHidden()
         }
-        .frame(height: 52)
+        .frame(height: 32)
     }
 }
