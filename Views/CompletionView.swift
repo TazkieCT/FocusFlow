@@ -18,91 +18,84 @@ struct CompletionView: View {
 
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            Image("background_plain2")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
 
-            ScrollView {
-                VStack(spacing: 30) {
-                    Spacer()
-                        .frame(height: 20)
-
+            HStack(spacing: 60) {
+                VStack(spacing: 20) {
                     Image(systemName: "trophy.fill")
-                        .font(.system(size: 60))
+                        .font(.system(size: 72))
                         .foregroundColor(.yellow)
 
                     Text(isTaskComplete ? "Great Job!" : "Well Done!")
-                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .font(.system(size: 32, weight: .bold, design: .rounded))
                         .foregroundColor(.black)
-                        .padding(.top, 5)
 
-                    Text("Score: \(score)")
+                    Text(taskTitle)
                         .font(.system(size: 18, weight: .medium))
                         .foregroundColor(.gray)
+                }
 
-                    VStack(spacing: 20) {
-                        Text("Rewards")
-                            .font(.system(size: 20, weight: .bold))
+                VStack(spacing: 28) {
+                    VStack(spacing: 8) {
+                        Text("Score")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundColor(.gray)
+
+                        Text("\(score)")
+                            .font(.system(size: 36, weight: .bold))
                             .foregroundColor(.black)
+                    }
 
-                        HStack(spacing: 50) {
-                            VStack(spacing: 12) {
-                                Image(systemName: "dollarsign.circle.fill")
-                                    .font(.system(size: 35))
-                                    .foregroundColor(.green)
-                                Text("+\(coinsEarned)")
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(.green)
-                            }
+                    HStack(spacing: 40) {
+                        VStack(spacing: 8) {
+                            Image(systemName: "dollarsign.circle.fill")
+                                .font(.system(size: 36))
+                                .foregroundColor(.green)
 
-                            VStack(spacing: 12) {
-                                Image(systemName: "star.circle.fill")
-                                    .font(.system(size: 35))
-                                    .foregroundColor(.orange)
-                                Text("New Points")
-                                    .font(.system(size: 16, weight: .medium))
-                                    .foregroundColor(.black)
-                            }
+                            Text("+\(coinsEarned)")
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundColor(.green)
+                        }
+
+                        VStack(spacing: 8) {
+                            Image(systemName: "star.circle.fill")
+                                .font(.system(size: 36))
+                                .foregroundColor(.orange)
+
+                            Text("New Points")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.black)
                         }
                     }
                     .padding(.vertical, 20)
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 32)
                     .background(Color(.systemGray6))
                     .cornerRadius(16)
 
-                    Spacer()
-                        .frame(height: 30)
-
-                    Button(action: {
+                    Button {
                         if isTaskComplete {
                             dismiss()
                         } else {
                             navigateToTaskSelection = true
                         }
-                    }) {
-                        HStack(spacing: 12) {
-                            Image(systemName: isTaskComplete ? "checkmark" : "arrow.right")
-                                .font(.title3)
-                            Text(isTaskComplete ? "Done" : "Continue")
-                                .font(.system(size: 20, weight: .semibold))
-                        }
-                        .foregroundColor(.white)
-                        .frame(width: 280, height: 60)
-                        .background(Color.black)
-                        .cornerRadius(12)
+                    } label: {
+                        PrimaryButton(
+                            title: isTaskComplete ? "Done" : "Continue"
+                        )
                     }
-                    .padding(.bottom, 40)
                 }
-                .padding(.horizontal, 40)
             }
+            .padding(.horizontal, 60)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Complete")
         .navigationBarBackButtonHidden(true)
         .sheet(isPresented: $navigateToTaskSelection) {
             NavigationStack {
                 TaskSelectionView()
             }
             .presentationDetents([.large])
-            .presentationDragIndicator(.visible)
         }
     }
 }
