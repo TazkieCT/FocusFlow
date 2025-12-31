@@ -27,7 +27,7 @@ struct ParentalDashboardView: View {
                         Text("View Child’s Progress")
                             .font(.system(size: 18, weight: .medium))
                             .foregroundColor(.gray)
-                            .padding(.top, 16)
+                            .padding(.top, 40)
                         HStack(spacing: 16) {
                             StatCard(
                                 icon: "checkmark.circle.fill",
