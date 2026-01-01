@@ -120,7 +120,6 @@ struct VideoGameplayView: View {
             if !showGamePopup {
                 showGamePopup = true
                 gameActive = true
-                spawnBubbles()
             }
         }
     }
