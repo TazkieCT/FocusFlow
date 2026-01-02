@@ -66,7 +66,10 @@ Open the project file in your XCode and run in your simulator.
 1. Access the Parental Dashboard
 2. View your child's learning statistics
 
-### References
-For the video we got from:
+### Notion (For more information)
+[Our notion!](https://www.notion.so/FOCUS-FLOW-Attention-Training-Apps-2ca49801db80801f8c7acc2bdcb08a2a)
+
+### Video Credits
+Videos sourced from:
 - [Tooth Brushing - PeekaBoo Kidz](https://www.youtube.com/watch?v=XbxsdbisXzU)
 - [Make the Bed - Hidden Pigeon Channel](https://www.youtube.com/watch?v=QBzynorzi_Q)
