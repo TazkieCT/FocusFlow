@@ -116,7 +116,7 @@ struct VideoGameplayView: View {
     }
 
     func setupGamePopupTimer() {
-        Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { _ in
+        Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in
             if !showGamePopup {
                 showGamePopup = true
                 gameActive = true
