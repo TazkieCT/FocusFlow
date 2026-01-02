@@ -65,3 +65,8 @@ Open the project file in your XCode and run in your simulator.
 ### For Parents
 1. Access the Parental Dashboard
 2. View your child's learning statistics
+
+### References
+For the video we got from:
+- [Tooth Brushing - PeekaBoo Kidz](https://www.youtube.com/watch?v=XbxsdbisXzU)
+- [Make the Bed - Hidden Pigeon Channel](https://www.youtube.com/watch?v=QBzynorzi_Q)
