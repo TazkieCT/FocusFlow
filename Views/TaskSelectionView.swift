@@ -28,7 +28,7 @@ struct TaskSelectionView: View {
                         taskTitle: "Tooth Brushing",
                         storyPreview: "Serunya Pangeran Leo melawan monster gigi sambil main bubble!",
                         characterImage: "IntroStory",
-                        videoFileName: "ToothBrush"
+                        videoFileName: "brush_teeth"
                     )) {
                         TaskCard(
                             image: "CardBrushTeeth",
@@ -41,7 +41,7 @@ struct TaskSelectionView: View {
                         taskTitle: "Making the Bed",
                         storyPreview: "Petualangan pahlawan merapikan kamar sambil main bubble!",
                         characterImage: "IntroStory",
-                        videoFileName: "MakeBed"
+                        videoFileName: "make_a_bed"
                     )) {
                         TaskCard(
                             image: "CardMakeBed",

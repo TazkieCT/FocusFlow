@@ -39,7 +39,7 @@ struct StoryIntroView: View {
                     .frame(width: 240)
                     .overlay(
                         Rectangle()
-                            .stroke(Color.white, lineWidth: 4)
+                            .stroke(Color.orange, lineWidth: 4)
                     )
                     .padding(.top, 40)
 

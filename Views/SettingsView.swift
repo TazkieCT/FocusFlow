@@ -25,7 +25,7 @@ struct SettingsView: View {
 
                 VStack(spacing: 16) {
                     
-                    Text("Choose Today’s Mission")
+                    Text("Settings")
                         .font(.system(size: 28, weight: .bold, design: .rounded))
                         .foregroundColor(.orange)
                         .padding(.top, 40)
