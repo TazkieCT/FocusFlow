@@ -30,6 +30,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		05C572022F07DA5F008E404E /* Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		05E205BD2F055EC000875106 /* Models */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Models;
@@ -78,6 +83,7 @@
 				05EB74312F050323004EFFE0 /* Views */,
 				05EB74182F050109004EFFE0 /* FocusFlow */,
 				05EB74172F050109004EFFE0 /* Products */,
+				05C572022F07DA5F008E404E /* Assets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +126,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				05C572022F07DA5F008E404E /* Assets */,
 				05E205BD2F055EC000875106 /* Models */,
 				05E205CA2F0560B300875106 /* Utils */,
 				05EB74182F050109004EFFE0 /* FocusFlow */,
