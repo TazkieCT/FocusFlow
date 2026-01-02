@@ -1,11 +1,9 @@
 # FocusFlow
-
 An interactive learning application designed to help children stay focused while watching educational videos through engaging mini-games.
 
-![FocusFlow App Screenshot](./assets/screenshot.png)
+![FocusFlow App Screenshot](./Assets/screenshot.png)
 
 ## Overview
-
 FocusFlow combines video learning with interactive games to maintain children's attention and engagement. As students watch educational content, they can participate in fun mini-games that encourage active learning and sustained focus.
 
 ## Features
@@ -28,27 +26,32 @@ FocusFlow includes three engaging games that appear while videos play to keep ch
 
 ## Screenshots
 
-![Video Learning Interface](./assets/interface.png)
+<img src="./Assets/interface.png" alt="Video Learning Interface" width="600">
+
 *Watch educational videos with interactive elements*
 
-Three fun games to maintain focus:
+### Three fun games to maintain focus:
+
 **Pop All Bubble**
-![Pop All Bubble](./assets/pop_bubble.gif)
+
+<img src="./Assets/pop_bubble.gif" alt="Pop All Bubble Game" width="500">
 
 **Color Match**
-![Color Match](./assets/color_match.gif)
+
+<img src="./Assets/color_match.gif" alt="Color Match Game" width="500">
 
 **Tap Race**
-![Tap Race](./assets/tap_race.gif)
 
-![Parental Dashboard](./assets/dashboard.png)
+<img src="./Assets/tap_race.gif" alt="Tap Race Game" width="500">
+
+<img src="./Assets/dashboard.png" alt="Parental Dashboard" width="600">
+
 *Monitor progress and manage settings from the parental dashboard*
 
 ## Installation
-
 ```bash
 # Clone the repository
-git clone [https://github.com/TazkieCT/focusflow.git](https://github.com/TazkieCT/FocusFlow.git)
+git clone https://github.com/TazkieCT/FocusFlow.git
 ```
 Open the project file in your XCode and run in your simulator.
 
@@ -62,4 +65,3 @@ Open the project file in your XCode and run in your simulator.
 ### For Parents
 1. Access the Parental Dashboard
 2. View your child's learning statistics
-3. Customize settings and content preferences
