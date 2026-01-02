@@ -2,7 +2,7 @@
 
 An interactive learning application designed to help children stay focused while watching educational videos through engaging mini-games.
 
-![FocusFlow App Screenshot](./assets/screenshot.png)
+![FocusFlow App Screenshot](./Assets/screenshot.png)
 
 ## Overview
 
@@ -28,20 +28,20 @@ FocusFlow includes three engaging games that appear while videos play to keep ch
 
 ## Screenshots
 
-![Video Learning Interface](./assets/interface.png)
+![Video Learning Interface](./Assets/interface.png)
 *Watch educational videos with interactive elements*
 
 Three fun games to maintain focus:
 **Pop All Bubble**
-![Pop All Bubble](./assets/pop_bubble.gif)
+![Pop All Bubble](./Assets/pop_bubble.gif)
 
 **Color Match**
-![Color Match](./assets/color_match.gif)
+![Color Match](./Assets/color_match.gif)
 
 **Tap Race**
-![Tap Race](./assets/tap_race.gif)
+![Tap Race](./Assets/tap_race.gif)
 
-![Parental Dashboard](./assets/dashboard.png)
+![Parental Dashboard](./Assets/dashboard.png)
 *Monitor progress and manage settings from the parental dashboard*
 
 ## Installation
