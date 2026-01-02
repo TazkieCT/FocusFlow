@@ -26,27 +26,27 @@ struct TaskSelectionView: View {
                 HStack(spacing: 48) {
                     NavigationLink(destination: StoryIntroView(
                         taskTitle: "Tooth Brushing",
-                        storyPreview: "Serunya Pangeran Leo melawan monster gigi sambil main bubble!",
+                        storyPreview: "Belajar cara menyikat gigi yang baik! Petualangan memahami mulut kita.",
                         characterImage: "IntroStory",
                         videoFileName: "brush_teeth"
                     )) {
                         TaskCard(
                             image: "CardBrushTeeth",
                             title: "Tooth Brushing",
-                            subtitle: "Lawan monster gigi!"
+                            subtitle: "Ayo pahami gigi kita!"
                         )
                     }
 
                     NavigationLink(destination: StoryIntroView(
                         taskTitle: "Making the Bed",
-                        storyPreview: "Petualangan pahlawan merapikan kamar sambil main bubble!",
-                        characterImage: "IntroStory",
+                        storyPreview: "Bangun pagi gosok gigi, eits jangan lupa merapikan kasurmu!",
+                        characterImage: "IntroStory2",
                         videoFileName: "make_a_bed"
                     )) {
                         TaskCard(
                             image: "CardMakeBed",
                             title: "Making the Bed",
-                            subtitle: "Jadi pahlawan kamar!"
+                            subtitle: "Merapikan kasur bersama Mr.Pigeon!"
                         )
                     }
                 }
